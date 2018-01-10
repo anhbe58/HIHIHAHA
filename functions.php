@@ -70,7 +70,7 @@ if( !function_exists('pcbtot_theme_setup') ){
 		register_nav_menus(
 	        array(
 	                'primary-menu' => __('Primary Menu', 'pcbtot'),
-	                'footer-nav' => 'Footer menu'
+	                'pcb-nav' => 'PCB menu'
 	        )
 		);
 		/*
@@ -168,9 +168,21 @@ if( !function_exists('pcbtot_menu_setup') ){
 			'theme_location' => $menu,
 			'menu_class' => 'nav navbar-nav',
 			'container' => 'div',
-		
 			'container_id' => 'menu',
 			'container_class' => $menu. ' navbar-collapse collapse col-md-10'
+		);
+		wp_nav_menu( $menu );
+	}
+}
+if( !function_exists('pcbtot_menu_child_setup') ){
+	function pcbtot_menu_child_setup($menu){
+		$menu = array(
+			'theme_location' => $menu,
+			'menu_class' => 'pcb-menu-ul',
+			'menu_id' => "",
+			'container' => 'div',
+			'container_id' => 'pcb-menu',
+			'container_class' => $menu . '-nav'
 		);
 		wp_nav_menu( $menu );
 	}

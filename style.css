@@ -74,9 +74,7 @@ table, table tr, table td{
 }
 .test{
 	border-style: solid;
-	border-width: 1px;
-	margin-bottom: 5px;
-	margin-top: 5px;
+	border-width: 2px;
 }
 .header-left-child .left{
 	float: left;
@@ -135,4 +133,123 @@ table, table tr, table td{
 .navbar-inverse {
     background-color: transparent;
     border-color: transparent;
+        margin-bottom: -1px;
+}
+.carousel-indicators {
+    /* bottom: 20px; */
+    position: absolute;
+    top: 330px;
+    left: 58%;
+}
+#pcb_tab_cont{
+	height: 80%;
+	width: 47%;
+	background-color: white;
+	position: absolute;
+	top: 10%;
+	left: 5%;
+}
+
+/*CSS cho menu nho trong slider*/
+.tab_menu{
+	position: relative;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+    background: #008a32;
+
+}
+#pcb_tab_cont{
+	background: transparent;
+}
+#pcb-menu ul {
+  background: #00a63f;
+  padding: 0;
+  margin-bottom: 0px;
+  list-style-type: none;
+  text-align: left;
+}
+#pcb-menu li {
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+  border-top: 1px solid #00cc4d;
+  padding: 0;
+
+}
+#pcb-menu a {
+  color: black;
+  position: absolute;
+  left: 10px;
+  text-decoration: none;
+  text-indent: 30px;
+}
+#pcb-menu li:first-child{
+	    border-top: 1px solid transparent;
+
+}
+#pcb-menu li:hover, #pcb-menu .active{
+    margin-top: 0;
+    text-decoration: none;
+    color: #333;
+    border-top: 1px solid #f2f5f8;
+    border-left: 6px solid #FF960D;
+    background-color: #f2f5f8;
+}
+.length-pcb, .width-pcb{
+}
+#pcb_tab_cont .tab_data{
+	background-image: url(./images/pwicon.png);
+	background-position: 0 -199px;
+    background-repeat: no-repeat;
+    background-color: #f2f5f8;
+}
+.banner-slider-top{
+	position: absolute;
+	height: 49.5%;
+	width: 14%;
+	top:0px;
+	right: 10%;
+	background-color: #fff;
+	opacity: 0.8;
+	transition: right 0.4s 0s, opacity 0.4s 0s;
+} 
+.banner-slider-top:hover, .banner-slider-bottom:hover {
+  right: 10.3%;
+  opacity: 1;
+}
+.banner-slider-bottom{
+	position: absolute;
+	height: 49.5%;
+	width: 14%;
+	bottom: 0px;
+	right: 10%;
+	background-color: #f0f0f0;
+	opacity: 0.8;
+	transition: right 0.2s 0.1s, opacity 0.2s 0.1s;
+} 
+/* CSS cho form PCB_TAB_FORM */
+.pcb_tab_form{
+	position: absolute;
+	margin: 3%;
+}
+.pcb_tab_form p{
+	color: #999;
+    font-size: 12px;
+}
+.pcb_tab_form h3{
+	color: #008a32;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 4px;
+    margin-top: 0px;
+}
+.label-primary{
+	margin-bottom: 5px;
+	line-height: 2;
+}
+/* CSS cho phan main feature */
+.pw-main-feature {
+    border-bottom: 1px solid #ddd;
+    height: 100px;
 }
