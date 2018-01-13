@@ -113,7 +113,7 @@ add_filter( "wp_nav_menu_primary_items", 'filter_wp_nav_menu_slug_items', 10, 2 
 
 
 /*Them jQuery*/
-function jquery_init() {
+/*function jquery_init() {
         // comment out the next two lines to load the local copy of jQuery
 	if( !is_admin()){
         wp_deregister_script('jquery');
@@ -121,7 +121,7 @@ function jquery_init() {
         wp_enqueue_script('jquery');
     }
 }
-add_action('wp_enqueue_scripts', 'jquery_init');
+add_action('wp_enqueue_scripts', 'jquery_init');*/
 
 /*Them Bootstrap*/
 function bootstrap_init() {
@@ -140,27 +140,20 @@ function bootstrap_style_setup(){
 add_action( 'wp_enqueue_scripts', 'bootstrap_style_setup' );
 /*Nhung file CSS*/
 function pcbtot_style_setup(){
-	wp_register_style( 'main-style', get_template_directory_uri() . "/style.css", 'all');
-	wp_enqueue_style( 'main-style' );
-
-	wp_register_style( 'reset-style', get_template_directory_uri() . "/reset.css", 'all');
+	wp_register_style( 'reset-style', get_template_directory_uri() . "/reset.css", 'bootstrap-style');
 	wp_enqueue_style( 'reset-style' );
+	wp_register_style( 'main-style', get_template_directory_uri() . "/style.css", 'bootstrap-style');
+	wp_enqueue_style( 'main-style' );
 }
 add_action( 'wp_enqueue_scripts', 'pcbtot_style_setup' );
-/*Them javascript*/
-add_action( 'wp_enqueue_scripts', 'theme_register_scripts', 1 );
+/*Them javascript function.js*/
 function theme_register_scripts() {
     /* Đăng ký file script sẽ có trong theme */
-    wp_register_script( 'functions-js',esc_url( trailingslashit( get_template_directory_uri() ) . 'functions.js'), array( 'jquery' ), '1.0', true );
- 
-    /* Localize Scripts - Phần này hiểu đơn giản là lấy giá trị script từ PHP */
-    $php_array = array( 
-        'language' => get_bloginfo( 'language' ), 
-        'URLhome' => get_bloginfo( 'home' ) 
-    );
-    wp_localize_script( 'functions-js', 'php_array', $php_array );
- 
+    wp_register_script( 'functions-js', get_template_directory_uri() . '/functions.js', array( 'jquery' ), false, true );
+    wp_enqueue_script( 'functions-js' );
 }
+add_action( 'wp_enqueue_scripts', 'theme_register_scripts');
+
 /*Thiet lap menu*/
 if( !function_exists('pcbtot_menu_setup') ){
 	function pcbtot_menu_setup($menu){
@@ -187,9 +180,24 @@ if( !function_exists('pcbtot_menu_child_setup') ){
 		wp_nav_menu( $menu );
 	}
 }
-/** Gọi file script. */
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
-function theme_enqueue_scripts() {
-    /* Gọi file script đã đăng ký ở trên */
-    wp_enqueue_script( 'functions-js' );
+
+
+/*Tạo danh sách market-dynamic
+$isshow, $date_dynamic, $username_dynamic, $amount_dynamic, $progress
+*/
+if( !function_exists('make_data_market_dynamic') ){
+	function make_data_market_dynamic($date_dynamic, $username_dynamic, $amount_dynamic, $progress_dynamic)
+	{
+		echo '<div class=\'data row\'>';
+		echo '<div class=\'date col-md-2\'>' . $date_dynamic . '</div>';
+		echo '<div class=\'username col-md-3\'>' . $username_dynamic . '</div>';
+		echo '<div class=\'amount col-md-3\'>' . $amount_dynamic . 'k</div>';
+		echo '<div class=\'progressbar col-md-4\'>';
+		echo '<div class=\'progress progress-striped active\'>';
+		echo '<div class=\'progress-bar\' role=\'progressbar\' aria-valuenow=\''. $progress_dynamic .'\' aria-valuemin=\'0\' aria-valuemax=\'100\' style=\'width: ' . $progress_dynamic . '%;\'> ' . $progress_dynamic . '%';				
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+	}
 }

@@ -29,11 +29,11 @@ img{
 }
 a{
 	text-decoration: none;
+    cursor: pointer;
 }
 
-input, input[type="submit"], button{
-	border: 1px solid #c8c8c8 !important;
-	padding: 5px 10px;
+ul, li {
+    list-style: none outside none;
 }
 h1{
 	font-size: 2.2em;
@@ -61,7 +61,7 @@ table, table tr, table td{
 /*Chia cot website*/
 #container-wed{
 	width: 100%;
-	background: #fff;
+	background: #F2F3F7;
 	border: 1px solid #d1d1d1;*/
 	
 }
@@ -174,32 +174,44 @@ table, table tr, table td{
   height: 50px;
   line-height: 50px;
   border-top: 1px solid #00cc4d;
+  border-left: 6px solid transparent;
   padding: 0;
 
 }
 #pcb-menu a {
   color: black;
   position: absolute;
-  left: 10px;
+/*  left: 10px;*/
   text-decoration: none;
-  text-indent: 30px;
+  text-indent: 13%;
+
 }
 #pcb-menu li:first-child{
 	    border-top: 1px solid transparent;
 
 }
-#pcb-menu li:hover, #pcb-menu .active{
+#pcb-menu li:hover{
     margin-top: 0;
     text-decoration: none;
     color: #333;
-    border-top: 1px solid #f2f5f8;
+    border-top: 1px solid transparent;
     border-left: 6px solid #FF960D;
-    background-color: #f2f5f8;
+    background-color: #00ba47;
+    cursor: pointer;
+}
+#pcb-menu .active{
+    margin-top: 0;
+    text-decoration: none;
+    color: #333;
+    border-top: 1px solid transparent;
+    border-left: 6px solid #FF960D;
+    background-color: #f2f5f8 !important;
+    cursor: pointer;
 }
 .length-pcb, .width-pcb{
 }
 #pcb_tab_cont .tab_data{
-	background-image: url(./images/pwicon.png);
+	/*background-image: url(./images/pwicon.png);*/
 	background-position: 0 -199px;
     background-repeat: no-repeat;
     background-color: #f2f5f8;
@@ -230,8 +242,11 @@ table, table tr, table td{
 } 
 /* CSS cho form PCB_TAB_FORM */
 .pcb_tab_form{
-	position: absolute;
-	margin: 3%;
+	position: relative;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+
 }
 .pcb_tab_form p{
 	color: #999;
@@ -251,5 +266,295 @@ table, table tr, table td{
 /* CSS cho phan main feature */
 .pw-main-feature {
     border-bottom: 1px solid #ddd;
-    height: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: white;
+}
+.pcb_tab_form ul{
+
+    padding-left: 0px;
+
+}
+.pcb_tab_form ul li{
+	list-style: none outside none;
+	float: left;
+    display: inline-block;
+    width: 45%;
+    min-width: 40%;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 0px;
+
+}
+.pcb_tab_form ul li input[type=text]{
+	float: left;
+    width: 30%;
+    height: 28px;
+    text-indent: 1.5%;
+    border: 1px solid #999;
+    background-color: #FFF;
+    outline: 0;
+    line-height: 28px;
+    padding-left: 0px;
+}
+.pcb_tab_form ul li select {
+    width: 100%;
+    height: 30px;
+    color: #333;
+    border: 1px solid #999;
+    background-color: #FFF;
+    outline: 0;
+}
+.pcb_tab_form ul li label {
+    color: #333;
+   	padding: 0px;
+}
+.label-info{
+    margin-left: 5%;
+}
+.pcb_tab_form .s-pcb {
+    width: 45%;
+    min-width: 60%;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 0px;
+}
+.pcb_tab_form .input-x-addon{
+	float: left;
+    background: #f2f5f8;
+    width: 30px;
+    height: 28px;
+    text-align: center;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    line-height: 28px;
+}
+.pcb_tab_form .chinon{
+	font-size: 10px;
+    border-right: 1px solid #999;
+}
+.pqFormSubmit button i{
+	width: 14px;
+    height: 20px;
+    background-position: -275px -2px;
+    margin-right: 10px;
+}
+
+.pw-main-feature .bestv .hm-icon{
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-right: 9px;
+    background-position: -84px 0;
+}
+.pw-main-feature .fastt .hm-icon {
+    background-position: -130px 0;
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-right: 9px;
+}
+.pw-main-feature .lowm .hm-icon {
+    background-position: -176px 0;
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-right: 9px;
+}
+.pw-main-feature .tops .hm-icon {
+    background-position: -176px 0;
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-right: 9px;
+}
+.pw-main-feature .left{
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+.pw-main-feature{
+    margin-bottom: 30px;
+}
+.pw-main-feature h3, .pw-main-feature p{
+    margin-top: 1%;
+    margin-bottom: 1%;
+	font-size: 12px;
+
+}
+.hm-icon {
+    background: url(./images/pwicon.png) no-repeat 0 0;
+    display: inline-block;
+}
+.pcb-4-tab{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+	background-color: white;
+	margin-bottom: 2%;
+}
+.pcb-4-tab .process-title {
+    /*padding: 27px 0 20px;*/
+    text-align: center;
+    border-right: 1px solid #f1f1f1;
+}
+.pcb-process .process-title h3{
+	/*text-align: center;*/
+    font-weight: bold;
+    color: #616161;
+}
+.pcb-process .process-title p{
+    color: #999;
+    /*text-align: center;*/
+    font-size: 14px;
+}
+.shopnow-btn {
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 15px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: 700;
+    background-color: #00a63f;
+    margin-bottom: 8%;
+}
+.shopnow-btn:hover {
+
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+.process-step .steptopicon p{
+	margin-top: 30%;
+    margin-left: -30%;
+    width: 90%;
+    text-align: center;
+}
+.process-step .steptopicon{
+	margin-top: 5%;
+	margin-left: 3%;
+	margin-right: -3%;
+}
+.process-step .steptopicon i {
+    width: 32px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    /*margin-top: 10%;*/
+    background: url(./images/workflow_smallicon.png) no-repeat left 0;
+}
+.process-step .steptopicon  span {
+    height: 2px;
+    background-color: #c9c9c9;
+    width: 50%;
+    display: inline-block;
+    margin-top: 13%;
+    color: #999999;
+    float: left;
+}
+.process-step .steptopicon .onliquot i {
+	margin-right: 20%;
+}
+.process-step .steptopicon .uplpcbfil i {
+	background-position: -64px 0;
+	
+	margin-right: 20%;
+}
+.process-step .steptopicon .ordreview i {
+	background-position: -96px 0;
+
+	margin-right: 20%;
+}
+.process-step .steptopicon .payme i {
+	background-position: -128px 0;
+
+	margin-right: 20%;
+}
+.process-step .steptopicon .fabric i {
+	background-position: -32px 0;
+
+	margin-right: 20%;
+}
+.process-step .steptopicon .delive i {
+	background-position: -160px 0;
+
+	margin-right: 20%;
+}
+.process-step .steptopicon .comrec i {
+	background-position: -192px 0;
+}
+.pcb-4-tab .gift-title {
+    /*padding: 27px 0 20px;*/
+    text-align: left;
+    padding-top: 15px;
+    border-right: 1px solid #f1f1f1;
+    border-top: 1px solid #f1f1f1;
+}
+.pcb-4-tab .gift-title img{
+    /*padding: 27px 0 20px;*/
+    float:left;
+}
+.pcb-4-tab .parameter{
+	border-top: 1px solid #f1f1f1;
+}
+.section-data{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+	background-color: white;
+	margin-bottom: 2%;
+}
+.section-data .market-dynamic{
+	height: 310px;
+	overflow: hidden;
+	border-right: 1px solid #f1f1f1;
+}
+.section-data .market-dynamic .title-data{
+	border-top: 1px solid #f1f1f1;
+	border-bottom: 1px solid #f1f1f1;
+}
+.section-data h3{
+	margin-top: 27px;
+    display: block;
+    text-align: center;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: bold;
+    color: #616161;
+}
+.section-data .data .date {
+	padding-left: 0px;
+	padding-right: 0px;
+	text-align: center;
+}
+.section-data .data .username {
+	padding-left: 1%;
+	padding-right: 1%;
+	overflow: hidden;
+}
+.section-data .data .amount {
+	padding-left: 1%;
+	padding-right: 1%;
+}
+.section-data .data .progressbar {
+	padding-left: 1%;
+	padding-right: 1%;
+	overflow: hidden;
+}
+.section-data .data .progressbar .progress{
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+/*===========================================================================*/
+@media (min-width: 1500px) {
+
+.label-info{
+    margin-left: 15%;
+}
+.btn-success{
+	margin-left: 15%;
+}
+
 }

@@ -10,7 +10,11 @@
 <div class='row pw-main-feature'>
 	<?php get_template_part( 'inc\main-feature' ); ?>
 </div>
-<div class='row col-main test'></div>
-<div class='row section-data test'></div>
+<div class='row pcb-4-tab'>
+	<?php get_template_part( 'inc\col-main' ); ?>
+</div>
+<div class='row section-data'>
+	<?php get_template_part( 'inc\section-data' ); ?>
+</div>
 <div class='row hyperchanel test'></div>
 <?php get_footer(); ?>
